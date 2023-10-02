@@ -2,29 +2,36 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "ks-personal-blog",
+    "title": "Karl Sparks",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "I am a AI enthusiast and data expert. I am currently a Principal Analyst at the Australian Prudential Regulation Authority where I generate insights and create data tools.\nPreviously, I worked at the Reserve Bank of Australia where I maintained the RBA’s banks’ funding model and undertook economic and financial research."
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Karl Sparks",
+    "section": "Projects",
+    "text": "Projects\n\nAI Resume Builder"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
+    "objectID": "index.html#articles",
+    "href": "index.html#articles",
+    "title": "Karl Sparks",
+    "section": "Articles",
+    "text": "Articles\n\nBank Fees in Australia\nBank Fees in Australia During the COVID-19 Pandemic"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
-    "text": "This is a post with executable code."
+    "text": "Hello Resume Builder\n\n\n\n\n\n\n\nresume-builder\n\n\ndesign\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\nKarl Sparks\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/ai-resume-builder-project-plan/index.html",
+    "href": "posts/ai-resume-builder-project-plan/index.html",
+    "title": "Hello Resume Builder",
+    "section": "",
+    "text": "As a first AI project, I thought it fitting that I build an AI to build resumes.\nMy objectives with this project are:\n\nEnhance my skills in developing a comprehensive application from start to finish, including deployment.\nCreate a practical and valuable tool as the project outcome.\n\nTo achieve these objectives, I explored various approaches. Initially, I considered using a straightforward Google Colab notebook, which would effectively address objective 2 by providing the necessary functionality. However, it would not fulfill objective 1.\nTo address both objectives comprehensively, I will develop a more intricate yet robust application using cloud technologies. A simplified diagram is provided below, outlining the primary components:\n\n\n\nSimple Architecture\n\n\nThe main components are:\n\nServerless Backend: This component will be constructed using AWS Lambda, and its primary function will be to facilitate API access to the underlying model.\n\nThe advantages of utilizing serverless backends include scalability for the final app in a resource-efficient manner, as they separate the resource intensive aspects from the continuously running server.\nThe logic of the underlying model will be further refined in proof-of-concept (POC) notebooks. It is likely to break down the resume generation process into multiple components, utilizing ChatGPT to build each part. Additional context will be sourced from the user and/or job advertisements. Another model may be employed to assess the quality of the output.\n\nResume Builder App: This component will primarily focus on the user interface (UI) and will likely be built using Streamlit for efficiency. Its role will be to gather user data and present the generated resumes to users.\nChatGPT: The core model for resume generation will be ChatGPT by OpenAI, which will be accessed through OpenAI’s API.\nVarious datasets stored in AWS: Depending on the progress of the proof-of-concept (POC) work, additional datasets will be collected and stored in AWS. These datasets may encompass:\n\nJob ads\nResumes\nLinkedin profiles etc\n\n\nI anticipate that this approach will serve as a valuable opportunity for honing my skills in the development and deployment of machine learning applications while simultaneously delivering a practical tool. Throughout this endeavor, I intend to maintain a flexible approach, allowing the final design and choice of tools to evolve based on insights gained from experimentation and proof-of-concept work. I will periodically document my progress towards achieving these goals by sharing POC updates on this blog."
   }
 ]
