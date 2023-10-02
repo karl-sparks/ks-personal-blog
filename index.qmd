@@ -1,0 +1,35 @@
+---
+title: "Karl Sparks"
+image: profile.jpg
+about:
+  template: trestles
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/karl-sparks/
+    - icon: github
+      text: Github
+      href: https://github.com/karl-sparks
+    - text: email
+      href: mailto:karl@sparks.to
+    - text: Blog
+      href: blog.qmd
+
+---
+
+I am a AI enthusiast and data expert. I am currently a Principal Analyst at the [Australian Prudential Regulation Authority](https://www.apra.gov.au) where I generate insights and create data tools.
+
+Previously, I worked at the [Reserve Bank of Australia](https://www.rba.gov.au) where I maintained the RBA's banks' funding model and undertook economic and financial research.
+
+## Projects
+
+-    AI Resume Builder
+
+
+## Articles
+
+-   [Bank Fees in Australia](https://www.rba.gov.au/publications/bulletin/2022/jun/bank-fees-in-australia.html)
+
+-   [Bank Fees in Australia During the COVID-19 Pandemic](https://www.rba.gov.au/publications/bulletin/2021/jun/bank-fees-in-australia-during-the-covid-19-pandemic.html)
+
+
