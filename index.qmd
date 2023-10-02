@@ -23,7 +23,7 @@ Previously, I worked at the [Reserve Bank of Australia](https://www.rba.gov.au) 
 
 ## Projects
 
--    AI Resume Builder
+-    [AI Resume Builder](https://github.com/karl-sparks/ai-resume-builder)
 
 
 ## Articles
