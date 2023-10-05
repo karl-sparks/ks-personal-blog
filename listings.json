@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/first-poc/index.html",
       "/posts/ai-resume-builder-project-plan/index.html"
     ]
   }
