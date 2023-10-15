@@ -7,118 +7,86 @@ categories:
   - poc
 ---
 
-**Key Findings from Proof of Concept:**
+AI Resume Builder is gone; long live [Sparks AI](https://github.com/karl-sparks/sparks-ai).
 
-1.  **LLMs for Resume Building:** LLMs, specifically GPT-4, proved effective in summarizing information for resume creation.
+While initially I was thinking to build a dedicated AI to help [review and build resumes](posts/ai-resume-builder-project-plan/index.qmd), in true agile fashion I've decided to prioritize getting a functional end-to-end AI prototype up and running first, one that uses the ChatGPT API to generate text. Later, I can shift my focus to incorporating additional features, like resume review and building.
 
-2.  **Context Sensitivity:** Output quality was sensitive to both context provided and the prompt template used.
+Guess what? I've done it! I've created a working web app using Python's Flask framework. Here's where Sparks AI stands currently:
 
-3.  **Improvement Aspects:** To enhance output quality, three key aspects were identified:
+1. The Flask web app is hosted locally.
 
-    1.  **Validation Mechanism:** Essential for testing model changes and identifying better-performing versions, potentially using another LLM for validation.
+2. The ChatGPT API is integrated with the chat interface, leveraging JQuery.
 
-    2.  **Feedback Mechanism:** Vital for refining the model and validation process based on user-detected errors and issues.
+3. Google OAuth integration ensures secure sharing without worrying about the expenses associated with uncontrolled API calls or the hassles of password management.
 
-    3.  **Structured Output:** Implementing structured output to ensure consistency in the generated resumes.
+These three features provide a strong foundation to build upon. My immediate priorities are:
 
-# Proof of concept
+- Deploying to the cloud for easier sharing (probably AWS).
 
-First, I used ChatGPT-4 to make sure the use case is workable.
+- Adding chat history to help the AI remember previous conversations.
 
-Although, GPT-4 is one of the most expensive LLMs available, I decided to go with GPT-4 because it is generally the best performing model for most use cases. If I can't get my use case working well with GPT-4 than I would unlikely be able to get it working with another model. The cost is also not that large at the proof of concept stage, although would be significant if scaled up.
+- Incorporating a vector database to support the AI in answering questions.
 
-For this proof of concept I will use Langchain to access GPT-4 and create the prompts. This API conveniently lets me set up the prompt in components based on a template. This lets met feed in additional information piece by piece, such as job description and resume experience. This functionality will be important when it comes to generallising this model to other jobs/resumes etc.
+  - Implementing document upload and web scraping to enrich the vector database.
 
-```{python}
-import pandas as pd
-import numpy as np
-import os
-import openai
-from langchain.chat_models import ChatOpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
+- Developing a multi-agent model to enhance the AI's capabilities using additional tools and data, possibly integrating [Microsoft's Autogen Python package](https://www.microsoft.com/en-us/research/blog/autogen-enabling-next-generation-large-language-model-applications/)
 
-llm = ChatOpenAI(model_name="gpt-4")
-```
+- Finally, integrating my original idea of resume review and building features.
 
-I create the prompt template below. When creating the template I experimented with a few different options to improve the outcome. This included using common recommendations such as including "lets think step by step", and specifying the output format.
+# Recent Insights
 
-```{python}
-template = """You are helping create a resume for a job seeker (the candidate).
+I extensively utilized ChatGPT and GitHub Copilot during the development of the initial web app. These tools proved highly beneficial, but they had their limitations. Let me elaborate:
 
-Use the following job description and information on the candidate background when answering the below question.
+**Key Insights from AI-Powered Development:**
 
-Make sure you do not make specific reference to skills or achievements that are not mentioned in the background.
+1. **Bridging Skill Gaps:** Building a project from scratch demands comprehensive knowledge, from backend to frontend. AI assistance helped me fill my own gaps, particularly in frontend development, to ensure project success.
 
-The candidate is applying for a job as a {job_title} at a {company_name} with the job description as follows:
-{job_description}
+2. **Facilitating Learning:** The AI not only filled gaps but also provided insights into its operations, fostering a deeper understanding compared to static tutorials. It guided me in comprehending why specific actions were taken.
 
-Candidate background: 
-{context}
+3. **Still not perfect** Despite its role in filling gaps, the AI fell short of replacing the need for genuine expertise.
 
-Question: Create a resume for the candedate. Make sure to include measureable metrics where possible.
+## Case study: Chat Frontend
 
-Answer: Let's think step by step."""
+One of the tasks I had little experience with was frontend development, especially in rendering the chat interface. While I had a general idea of what I wanted, implementing it was a challenge. To kickstart the process, I shamelessly borrowed code from a comprehensive tutorial on implementing ChatterBot in Flask.
 
-prompt = PromptTemplate(template=template, input_variables=["context", "job_title", "company_name", "job_description"])
+![Version 1](version-1.png)
 
-llm_chain = LLMChain(prompt=prompt, llm=llm)
+This version had a few issues:
 
-job_title = "Machine Learning Engineer"
+1. Minimal styling with a simple bold title.
 
-company_name = "Machinify"
+2. Absence of chat bubbles.
 
-job_description = """
-Machinify is a revolutionary healthcare software company with a mission to ensure that patients get the right medical treatment, at the right time, at the right price. Our cloud-based Machinify AI platform leverages the latest advances in machine learning, large language models, data analytics, and cloud processing to solve previously intractable problems, transforming healthcare administration and payment operations.
+3. User and AI messages styled the same and positioned on the same side of the chatbox.
 
-We are seeking an ML Engineer to join our AI focused healthcare startup. Our team has deployed models that check for anomalies in medical claims, predict the trajectory of care of a particular patient and the next likely treatment and even “read and understand” medical record documents using state-of-the-art NLP and computer vision techniques to assist clinicians. There are many more such problems to be solved. So if you are looking for a place where you can apply your expertise in AI/ML to solve real problems and make a difference in an industry that impacts millions of lives while accelerating your career, you’ll love Machinify. We are seeking a Sr Machine Learning Scientist to join our team.
+To address these issues, I pasted my entire HTML file into ChatGPT 3.5 and asked it to enhance the styling. Here's the result.
 
-What you’ll do:
-Advance Machinify’s capabilities to model and understand medical decisions which will power a range of products in the claims processing space. 
-Make thoughtful decisions around which methods/algorithms are likely to work well in solving the business problem at hand
-Consider the quality of the available input data and build robust systems that will work well in the presence of noise/errors
-Measure the model output in practical real-world settings and iterate your approach 
-Learn about the healthcare industry and become an expert over time
+![Version 2](version-2.png)
 
-What You Bring:
-You enjoy solving real-world business problems by developing, from scratch, ML models and deploying them in production - and have been doing that successfully for a while. 
-You are comfortable measuring and optimizing the direct business impact of your work. 
-You are interested in learning about the healthcare industry and helping us improve the care millions of people receive. 
-You are scrappy, and love solving hard problems that matter. 
-You are experienced with SQL, handling large-scale data, and are comfortable with at least one programming language (Python, R, etc.). 
-You have experience building ML models using modern ML approaches like Neural Nets or Tree-ensembles from scratch for new applications - making decisions relating to which supervised labels to use, the metric to optimize for, and the features likely to be useful. 
-You are a critical thinker who can be strategic without losing attention to detail. 
-You are comfortable taking the initiative and owning projects from start to finish. 
-You can build positive relationships based on trust and value delivered. 
+This version had improved overall styling but still faced issues 2 and 3 as mentioned earlier. So, I pasted the HTML again and requested GPT3.5 to add chat bubbles and format them on the left for the bot and right for the human. This approach worked fantastically, as shown below.
 
-The base salary for this position will vary based on an array of factors unique to each candidate such as qualifications, years and depth of experience, skill set, certifications, etc. The base salary range for this role is $180k-250k. We are hiring for different seniorities, and our Recruiting team will let you know if you qualify for a different role/range. Salary is one component of the total compensation package, which includes meaningful equity, excellent healthcare, flexible time off, and other benefits and perks.
+![Version 3](version-3.png)
 
-Equal Employment Opportunity at Machinify
+Satisfied, I began experimenting with Spark's AI version instead of using ChatGPT 3.5. This experiment quickly brought two more issues to light:
 
-Machinify is committed to hiring talented and qualified individuals with diverse backgrounds for all of its positions. Machinify believes that the gathering and celebration of unique backgrounds, qualities, and cultures enriches the workplace.
-"""
+1. User-input HTML in the HTML file wasn't escaped, leaving room for potential injection attacks.
 
-context = """
-Work Experience:
-  - Principal Analyst for the Austrlian Prudential Regulation Authority.
-    - Extensively uses R and SQL to analyse data and produce reports.
-    - Has a strong understanding of the Australian financial system.
-    - Created R packages to automate the production of reports.
-    - Created new automated reports to highlight the difference between old and new capital frameworks for everyone of the 114 reporting ADIs.
-  - Senior Analyst for the Reserve Bank of Australia.
-    - Used R to build and maintain models to monitor and forecast banks' funding costs.
-    - Undertook economic and financial research to support the Bank's monetary policy and payment regulation functions.
-    - Liaising with external and internal stakeholders for their expert opinions on different bank funding markets, drawing this all together to provide a comprehensive overview of funding conditions.
-    - Monitoring of the quantity and price of bank funding sources such as deposits, bonds, securitisation and money markets using various data sources.
-    - Analysing data collected through the Economic and Financial Statistics (EFS) collection. Including liaising with reporting institutions on reporting standards and data quality issues, and preparing data for publication.
-    - Used R and SQL to build and maintain models to monitor and forecast banks' funding costs. to analyse data and forecasting the impact of changes in banks' funding conditions on average funding costs.
-"""
-```
+2. The AI chat responses weren't properly escaped or formatted.
 
-The above prompt and context will create the below response from ChatGPT-4.
+Asking GPT 3.5 promptly resolved issue 1 by adding a JavaScript function to escape user HTML input before incorporating it into the chat bubbles. However, it struggled to address issue 2, initially suggesting converting the AI's answer to markdown before rendering, which would render the messages invalid on the actual page since it needed HTML.
 
-```{python}
-answer = llm_chain.run({"context": context, "job_title": job_title, "company_name": company_name, "job_description": job_description})
+Experimenting with this I realised there were two main issues here:
 
-print(answer)
-```
+1. the rendering of the AI response on the HTML page
+
+2. the format of the initial response from the OpenAI API calls
+
+I discovered that each issue had multiple solutions, but the optimal solution heavily relied on my approach to each problem. Initially, Chat GPT 3.5 (and some experiments with GPT-4) had difficulty proposing a solution, but once I directed it on how to solve each problem, it quickly provided the answers.
+
+For these issues, I opted to first include a command in the prompt template to respond in markdown format. Then, I integrated a function in the Python backend to convert the AI markdown response into HTML, which was sent directly to the frontend. I found this to be the most reliable way to format AI responses effectively.
+
+![Version 4](version-4.png)
+
+Finally, I added some CSS styling to enhance the appearance of the code blocks. Chat GPT 3.5 assisted with this, saving me considerable time that I would have spent on online research. Take a look below for the final result.
+
+![Version 5](version-5.png)
