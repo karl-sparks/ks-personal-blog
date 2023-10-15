@@ -171,13 +171,13 @@ ul.task-list li input[type="checkbox"] {
 <p>I extensively utilized ChatGPT and GitHub Copilot during the development of the initial web app. These tools proved highly beneficial, but they had their limitations. Let me elaborate:</p>
 <p><strong>Key Insights from AI-Powered Development:</strong></p>
 <ol type="1">
-<li><p><strong>Bridging Skill Gaps:</strong> Building a project from scratch demands comprehensive knowledge, from backend to frontend. The AI assistance helped me fill my own gaps, particularly in frontend development, to get a minimal viable project off the ground extremely quickly.</p></li>
+<li><p><strong>Bridging Skill Gaps:</strong> Building a project from scratch demands comprehensive knowledge, from back- to front-end. The AI assistance helped me fill my own gaps, particularly in front-end development, to get a minimal viable project off the ground extremely quickly.</p></li>
 <li><p><strong>Facilitating Learning:</strong> The AI not only filled gaps but also provided insights into its operations, fostering a deeper understanding compared to static tutorials. It guided me in comprehending why specific actions were taken, which helped me direct future work and debug issues quickly.</p></li>
 <li><p><strong>Still not perfect</strong> Despite its role in filling gaps, the AI fell short of replacing the need for genuine expertise, in particular for complex system questions.</p></li>
 </ol>
-<section id="case-study-chat-frontend" class="level2">
-<h2 class="anchored" data-anchor-id="case-study-chat-frontend">Case study: Chat Frontend</h2>
-<p>One of the tasks I had little experience with was frontend development, especially in rendering the chat interface. While I had a general idea of what I wanted, implementing it was a challenge. To kickstart the process, I shamelessly borrowed code from a comprehensive tutorial on implementing ChatterBot in Flask <a href="https://codinginfinite.com/chatbot-in-python-flask-tutorial/">this one was where I grabbed the initial template</a>.</p>
+<section id="case-study-chat-front-end" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-chat-front-end">Case study: Chat Front-end</h2>
+<p>One of the tasks I had little experience with was front-end development, especially in rendering the chat interface (R Shiny and Python Streamlit are the closest I’ve come before). While I had a general idea of what I wanted, implementing it was a challenge. To kickstart the process, I shamelessly borrowed code from a comprehensive tutorial on implementing ChatterBot in Flask <a href="https://codinginfinite.com/chatbot-in-python-flask-tutorial/">this one was where I grabbed the initial template</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="version-1.png" class="img-fluid figure-img"></p>
@@ -216,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>the format of the initial response from the OpenAI API calls</p></li>
 </ol>
 <p>I discovered that each issue had multiple solutions, but the optimal solution heavily relied on my approach to each problem. Initially, GPT-3.5 (and some experiments with GPT-4) had difficulty proposing a solution, but once I directed it on which method to solve each problem, it quickly provided a workable answer for each. In short, GPT-3.5 quickly provided answers to solutions, but only once the problem had been sufficently simplified and defined clearly.</p>
-<p>As for the solutions, I opted to first use prompt engineering by adding a command to respond in <em>markdown format</em> to the prompt template for any queries to the API. Then, in the Python backend I converted the AI markdown response into HTML, which was sent directly to the frontend client and displayed as is. I found this to be the most reliable way to format the responses effectively.</p>
+<p>As for the solutions, I opted to first use prompt engineering by adding a command to respond in <em>markdown format</em> to the prompt template for any queries to the API. Then, in the Python backend I converted the AI markdown response into HTML, which was sent directly to the front-end client and displayed as is. I found this to be the most reliable way to format the responses effectively.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="version-4.png" class="img-fluid figure-img"></p>
