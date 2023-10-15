@@ -39,15 +39,15 @@ I extensively utilized ChatGPT and GitHub Copilot during the development of the 
 
 **Key Insights from AI-Powered Development:**
 
-1. **Bridging Skill Gaps:** Building a project from scratch demands comprehensive knowledge, from backend to frontend. The AI assistance helped me fill my own gaps, particularly in frontend development, to get a minimal viable project off the ground extremely quickly.
+1. **Bridging Skill Gaps:** Building a project from scratch demands comprehensive knowledge, from back- to front-end. The AI assistance helped me fill my own gaps, particularly in front-end development, to get a minimal viable project off the ground extremely quickly.
 
 2. **Facilitating Learning:** The AI not only filled gaps but also provided insights into its operations, fostering a deeper understanding compared to static tutorials. It guided me in comprehending why specific actions were taken, which helped me direct future work and debug issues quickly.
 
 3. **Still not perfect** Despite its role in filling gaps, the AI fell short of replacing the need for genuine expertise, in particular for complex system questions.
 
-## Case study: Chat Frontend
+## Case study: Chat Front-end
 
-One of the tasks I had little experience with was frontend development, especially in rendering the chat interface. While I had a general idea of what I wanted, implementing it was a challenge. To kickstart the process, I shamelessly borrowed code from a comprehensive tutorial on implementing ChatterBot in Flask [this one was where I grabbed the initial template](https://codinginfinite.com/chatbot-in-python-flask-tutorial/).
+One of the tasks I had little experience with was front-end development, especially in rendering the chat interface (R Shiny and Python Streamlit are the closest I've come before). While I had a general idea of what I wanted, implementing it was a challenge. To kickstart the process, I shamelessly borrowed code from a comprehensive tutorial on implementing ChatterBot in Flask [this one was where I grabbed the initial template](https://codinginfinite.com/chatbot-in-python-flask-tutorial/).
 
 ![Version 1](version-1.png)
 
@@ -83,7 +83,7 @@ Experimenting with this I realised there were two main issues that each had to b
 
 I discovered that each issue had multiple solutions, but the optimal solution heavily relied on my approach to each problem. Initially, GPT-3.5 (and some experiments with GPT-4) had difficulty proposing a solution, but once I directed it on which method to solve each problem, it quickly provided a workable answer for each. In short, GPT-3.5 quickly provided answers to solutions, but only once the problem had been sufficently simplified and defined clearly.
 
-As for the solutions, I opted to first use prompt engineering by adding a command to respond in *markdown format* to the prompt template for any queries to the API. Then, in the Python backend I converted the AI markdown response into HTML, which was sent directly to the frontend client and displayed as is. I found this to be the most reliable way to format the responses effectively.
+As for the solutions, I opted to first use prompt engineering by adding a command to respond in *markdown format* to the prompt template for any queries to the API. Then, in the Python backend I converted the AI markdown response into HTML, which was sent directly to the front-end client and displayed as is. I found this to be the most reliable way to format the responses effectively.
 
 ![Version 4](version-4.png)
 
