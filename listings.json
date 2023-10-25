@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/fastapi-htmx-docker-tutorial/index.html",
       "/posts/ai-powered-development/index.html",
       "/posts/first-poc/index.html",
       "/posts/ai-resume-builder-project-plan/index.html"
