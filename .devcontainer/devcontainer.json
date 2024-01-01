@@ -1,4 +1,5 @@
 {
+	"name": "Quarto Personal Site",
 	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {}
