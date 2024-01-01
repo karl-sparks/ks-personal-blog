@@ -10,9 +10,11 @@ about:
     - icon: github
       text: Github
       href: https://github.com/karl-sparks
+    - text: kaggle
+      href: https://www.kaggle.com/karlsparks
     - text: email
       href: mailto:karl@sparks.to
-    - text: Blog
+    - text: blog
       href: blog.qmd
 
 ---
@@ -23,7 +25,7 @@ Previously, I worked at the [Reserve Bank of Australia](https://www.rba.gov.au) 
 
 ## Projects
 
--    [AI Resume Builder](https://github.com/karl-sparks/ai-resume-builder)
+-    [Sparks AI](https://github.com/karl-sparks/sparks-ai)
 
 
 ## Articles

@@ -1,5 +1,5 @@
 ---
-title: "Building a Basic AI Chat Bot Web App using FastAPI, HTMX, and Docker: Part 1"
+title: "Building a Basic AI Chat Bot Web App using FastAPI, HTMX, and Docker"
 author: "Karl Sparks"
 date: "2023-10-25"
 categories: 
@@ -317,5 +317,3 @@ docker run -p 8000:8000 image-name
 ```
 
 Remember, the `-p 8000:8000` flag is crucial, instructing Docker to bind the container's 8000 port to the external. You can then navigate to http://127.0.0.1:8000/ to see the app running.
-
-In part 2 we will look at modifying the ask-ai endpoint to use the langchain package to access GPT-4. We will also look at connected the backend to a database to store chat history. Finally we will look at deploying the app to a server.
