@@ -1,1 +1,1 @@
-Sitemap: https://github.com/karl-sparks/ks-personal-blog/sitemap.xml
+Sitemap: https://karl-sparks.github.io/ks-personal-blog/sitemap.xml
