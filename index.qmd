@@ -15,7 +15,7 @@ about:
     - text: email
       href: mailto:karl@sparks.to
     - text: blog
-      href: blog.qmd
+      href: ks-personal-blog/blog.html
 
 ---
 
